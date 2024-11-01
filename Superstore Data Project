@@ -1,0 +1,25 @@
+-- Project 1 Superstore data
+
+-- write query that orders items by price
+SELECT *
+FROM superstore
+ORDER BY price
+;
+
+-- write query that shows a statistic like sum, avg, min, etc.
+SELECT AVG(price)
+FROM superstore
+;
+
+-- show a statistic abt price of items in kitchen supplies
+SELECT AVG(price), category
+FROM superstore
+WHERE category='Kitchen Supplies'
+;
+
+-- come up with question about data and answer it with sql
+SELECT item_name, category, price
+FROM superstore
+WHERE price < 50.00
+ORDER BY category
+;

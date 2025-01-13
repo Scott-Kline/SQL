@@ -11,15 +11,24 @@ SELECT AVG(price)
 FROM superstore
 ;
 
--- show a statistic abt price of items in kitchen supplies
+-- show two statistics about price of items in kitchen supplies
 SELECT AVG(price), category
 FROM superstore
 WHERE category='Kitchen Supplies'
 ;
+SELECT SUM(price), category
+FROM superstore
+WHERE category='Kitchen Supplies'
+;
 
--- come up with question about data and answer it with sql
+-- come up with and answer two new questions about data
 SELECT item_name, category, price
 FROM superstore
 WHERE price < 50.00
 ORDER BY category
+;
+SELECT category, AVG(average_rating) AS Average_Category_Rating
+FROM superstore
+GROUP BY category
+ORDER BY AVG(average_rating) desc
 ;

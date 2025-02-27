@@ -81,13 +81,9 @@ WHERE "type" = 'Movie'
 ;
 
 -- 2. When was the most recent batch of tv shows and/or movies added to the database?
--- For this question, I wanted to show the last 7 titles, so I limited the query to 7 rows.
 
-SELECT
-date_added
-,title
-,type
-FROM "netflix_titles_info" LIMIT 7
+SELECT MAX(date(date_added))
+FROM "netflix_titles_info"
 ;
 
 -- 3. List all the movies and tv shows in alphabetical order.
